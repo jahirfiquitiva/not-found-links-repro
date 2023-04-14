@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body className={'flex flex-col mx-auto w-full max-w-[768px] h-full min-h-screen'}>
-        <header>
+        <header className={'border-b'}>
           <nav className={'flex items-center gap-12 py-6'}>
             <Link
               href={'/'}
@@ -30,6 +30,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
         <main className={'flex flex-col h-full flex-1'}>{children}</main>
+        <footer className={'flex flex-col py-8 border-t'}>
+          <p>
+            Links with <code>a</code> tag:
+          </p>
+          <nav className={'flex items-center gap-12 py-6'}>
+            <a
+              href={'/'}
+              className={'py-2 px-4 text-green-600 dark:text-green-400 hover:underline'}>
+              Home
+            </a>
+            <a
+              href={'/about'}
+              className={'py-2 px-4 text-green-600 dark:text-green-400 hover:underline'}>
+              About
+            </a>
+            <a
+              href={'/blog'}
+              className={'py-2 px-4 text-green-600 dark:text-green-400 hover:underline'}>
+              Blog
+            </a>
+          </nav>
+        </footer>
       </body>
     </html>
   );
